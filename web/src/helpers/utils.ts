@@ -143,7 +143,11 @@ export const parseHTMLToRawText = (htmlStr: string): string => {
 export function absolutifyLink(rel: string): string {
   const anchor = document.createElement("a");
   anchor.setAttribute("href", rel);
-  return anchor.href;
+
+  // change to cdn path
+  const hrefURL = new URL(anchor.href);
+  hrefURL.host = "memos-asset.iszu.cn";
+  return hrefURL.href;
 }
 
 export function getSystemColorScheme() {

@@ -6,6 +6,7 @@ const devProxyServer = "http://localhost:8081/";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "https://memos-asset.iszu.cn",
   plugins: [react()],
   server: {
     host: "0.0.0.0",
