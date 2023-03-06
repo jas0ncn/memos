@@ -146,7 +146,11 @@ export function absolutifyLink(rel: string): string {
 
   // change to cdn path
   const hrefURL = new URL(anchor.href);
-  hrefURL.host = "memos-asset.iszu.cn";
+
+  if (hrefURL.hostname === "memos.iszu.cn") {
+    hrefURL.host = "memos-asset.iszu.cn";
+  }
+
   return hrefURL.href;
 }
 
